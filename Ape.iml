@@ -9,5 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="HttpClient" level="project" />
+    <orderEntry type="library" name="f" level="project" />
+    <orderEntry type="library" name="EdioticIdeas JavaFX UI" level="project" />
   </component>
 </module>

@@ -1,7 +1,6 @@
 package Login;
 
 
-
 import HttpClient.HttpPost;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,9 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.json.JSONObject;
 
@@ -19,22 +17,22 @@ import java.io.*;
 import java.net.URL;
 
 
-
-public class Login{
+public class Login {
     @FXML
     TextField EmailID;
     @FXML
     PasswordField Password;
     @FXML
     Label  errormessage;
-
+    @FXML
+    AnchorPane main;
 
     public static Stage AdminLoginStage;
 
     @FXML
     void Login(ActionEvent event) throws Exception {
-       login(event);
 
+        login(event);
     }
 
     private void login(ActionEvent event) {
@@ -54,11 +52,10 @@ public class Login{
           }
           else {
               writeNewUser(httpPost.getStringbuffer().toString());
-              Parent AdminLoginParent = FXMLLoader.load(getClass().getResource("/Account/Main.fxml"));
+              Parent AdminLoginParent = FXMLLoader.load(getClass().getResource("/Account/AccountMain.fxml"));
               Scene AdminLoginScene = new Scene(AdminLoginParent);
               AdminLoginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
               AdminLoginStage.setScene(AdminLoginScene);
-              AdminLoginStage.setMaximized(true);
               AdminLoginStage.show();
           }
         } catch (Exception e) {
@@ -76,9 +73,5 @@ public class Login{
         } catch (Exception e){
 
         }
-
     }
-
-
-
 }
