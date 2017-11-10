@@ -21,7 +21,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-       // Utility.check();
-        //System.out.println(Utility.getTitle());
     }
 }
