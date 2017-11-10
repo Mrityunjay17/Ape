@@ -1,6 +1,6 @@
 package Main;
 
-import Utility.Utility;
+import Utility.Tokencheck;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -87,7 +87,7 @@ public class ConnectionCheck implements Initializable {
                         progressBar.setProgress(set / 100);
                         Thread.sleep(100);
                     }
-                   return Utility.check();
+                   return Tokencheck.check();
                 }
             };
         }
