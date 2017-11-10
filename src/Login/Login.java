@@ -25,7 +25,7 @@ public class Login {
     @FXML
     Label  errormessage;
     @FXML
-    AnchorPane main;
+     CheckBox Staysignedin;
 
     public static Stage AdminLoginStage;
 
@@ -51,12 +51,15 @@ public class Login {
               errormessage.setText(httpPost.getStringbuffer().toString());
           }
           else {
-              writeNewUser(httpPost.getStringbuffer().toString());
+              if (Staysignedin.isSelected()){
+                  writeNewUser(httpPost.getStringbuffer().toString());
+              }
               Parent AdminLoginParent = FXMLLoader.load(getClass().getResource("/Account/AccountMain.fxml"));
               Scene AdminLoginScene = new Scene(AdminLoginParent);
               AdminLoginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
               AdminLoginStage.setScene(AdminLoginScene);
               AdminLoginStage.show();
+
           }
         } catch (Exception e) {
             System.out.println(e);
