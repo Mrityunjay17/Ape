@@ -1,14 +1,11 @@
 package Main;
 
-import HttpClient.HttpGet;
-import HttpClient.HttpPost;
-import Utilitypackage.Utility;
+import Utility.Utility;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,7 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.json.JSONObject;
+
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
