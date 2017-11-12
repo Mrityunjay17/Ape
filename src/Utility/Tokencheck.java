@@ -62,6 +62,7 @@ public class Tokencheck {
         if(read()!=null){
             try {
                 HttpGet httpGet=new HttpGet("http://localhost/checkconnection");
+
             }
             catch (Exception e){
                 return false;

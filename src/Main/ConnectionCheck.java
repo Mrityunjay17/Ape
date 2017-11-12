@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class ConnectionCheck implements Initializable {
+public class ConnectionCheck{
 
     static String Title;
 
@@ -32,8 +32,8 @@ public class ConnectionCheck implements Initializable {
 
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources)
+    @FXML
+    public void initialize()
     {
         booleanService.start();
         booleanService.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
