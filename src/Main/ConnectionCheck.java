@@ -51,25 +51,26 @@ public class ConnectionCheck{
                    ButtonType buttonTypeOne = new ButtonType("Retry");
                    ButtonType buttonTypeCancel = new ButtonType("Close", ButtonBar.ButtonData.CANCEL_CLOSE);
                    alert.getButtonTypes().setAll(buttonTypeOne,buttonTypeCancel);
-
                    Optional<ButtonType> result = alert.showAndWait();
-
                    if (result.get() == buttonTypeOne){
                        booleanService.restart();
                    } else {
                        System.exit(0);
                    }
-
                }
                else {
-
                     Stage main=(Stage) ancher.getScene().getWindow();
                     main.hide();
                     Stage stage=new Stage();
                     stage.setTitle(Title);
                     stage.getIcons().add(new Image("/Resources/images/ApeLogo.png"));
                     stage.setScene(new Scene(root));
-                    stage.setMaximized(true);
+                    if(Title.equals("Create Admin")){
+                        stage.setResizable(false);
+                    }
+                    else {
+                        stage.setMaximized(true);
+                    }
                     stage.show();
                }
            }

@@ -61,7 +61,12 @@ public class Tokencheck {
         Tokencheck tokencheck=new Tokencheck();
         if(read()!=null){
             try {
-                HttpGet httpGet=new HttpGet("http://localhost/checkconnection");
+                HttpGet httpGet=new HttpGet("http://localhost");
+                if(httpGet.getStringbuffer().toString().equals("0")){
+                    ConnectionCheck.setRoot( tokencheck.setroot("createadmin"));
+                    ConnectionCheck.setTitle("Create Admin");
+                    return true;
+                }
 
             }
             catch (Exception e){
@@ -83,7 +88,6 @@ public class Tokencheck {
                     jsonObject.put("token",read());
                     HttpPost httpPost=new HttpPost(url,jsonObject);
                     JSONObject get=new JSONObject(httpPost.getStringbuffer().toString());
-                    tokencheck.setroot(get.getString("Post"));
                     ConnectionCheck.setRoot(tokencheck.setroot(get.getString("Post")));
                     ConnectionCheck.setTitle("Accounts");
                 }
@@ -94,7 +98,6 @@ public class Tokencheck {
                     } catch (Exception ex) {
                         return false;
                     }
-
                 }
             }
             return true;
@@ -106,6 +109,8 @@ private Parent setroot(String fxml) throws Exception{
     Parent root;
 
     switch (fxml){
+        case ("createadmin"):root=FXMLLoader.load(getClass().getResource("/Admin/Create_Admin.fxml"));
+                            break;
         case ("account"):root=FXMLLoader.load(getClass().getResource("/Account/AccountMain.fxml"));
                             break;
         default:root=FXMLLoader.load(getClass().getResource("/Login/Login.fxml"));
