@@ -194,7 +194,7 @@
                      <children>
                         <AnchorPane maxWidth="400.0">
                            <children>
-                              <DatePicker fx:id="Dateofbirth" layoutX="26.0" layoutY="17.0" promptText="Date Of Birth" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                              <DatePicker fx:id="Dateofbirth" editable="false" layoutX="26.0" layoutY="17.0" promptText="Date Of Birth" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" maxWidth="400.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
