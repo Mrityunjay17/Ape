@@ -38,27 +38,27 @@ public class CreateAdmin{
 
     @FXML
     void CreateAccount(ActionEvent event) {
+        data_check();
+    }
+
+    @FXML
+    void createAccount(KeyEvent keyEvent){
+        if(keyEvent.getCode()== KeyCode.ENTER) {
+            data_check();
+        }
+    }
+
+    private void data_check(){
         try {
-            if (getData().length()!=0){
-                register(getData());
+            JSONObject data=getData();
+            if (data.length()!=0){
+                send_to_server(data);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    @FXML
-    void createAccount(KeyEvent keyEvent){
-        if(keyEvent.getCode()== KeyCode.ENTER){
-            try {
-                if (getData().length()!=0){
-                    register(getData());
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     JSONObject getData() throws Exception{
 
@@ -66,7 +66,7 @@ public class CreateAdmin{
 
         if(!F_name.getText().equals("")&&!Gfname.getText().equals("")&&!Gender.getValue().equals(null)
                 && Email_id.getText().matches(Email_Pattern)&&Mobile.getText().matches(Mobile_Pattern)&&
-                password.getText().length()<=6 &&password.getText().equals(Confirm_Password.getText())){
+                password.getText().length()>=6 &&password.getText().equals(Confirm_Password.getText())){
 
             Create_account.put("First_Name", F_name.getText());
             Create_account.put("Middle_Name",Mname.getText());
@@ -107,12 +107,13 @@ public class CreateAdmin{
     }
 
 
-    private void register(JSONObject jsonObject) throws Exception {
+    private void send_to_server(JSONObject jsonObject) throws Exception {
         URL url = new URL("http://localhost/create_admin");
 
         HttpPost httpPost=new HttpPost(url,jsonObject);
         System.out.println(httpPost.getStringbuffer().toString());
     }
+
 
     @FXML
     public void initialize(){
