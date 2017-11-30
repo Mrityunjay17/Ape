@@ -29,7 +29,7 @@
             <RowConstraints minHeight="77.0" prefHeight="77.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Create Admin Account">
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Create Admin account">
                <font>
                   <Font size="31.0" />
                </font>
@@ -76,7 +76,7 @@
                      <children>
                         <AnchorPane maxWidth="400.0">
                            <children>
-                              <TextField fx:id="F_name" layoutX="26.0" layoutY="14.0" promptText="First Name" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                              <TextField fx:id="fName" layoutX="26.0" layoutY="14.0" promptText="First Name" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" maxWidth="400.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -135,7 +135,7 @@
                      <children>
                         <AnchorPane maxWidth="400.0">
                            <children>
-                              <TextField fx:id="Gfname" layoutX="26.0" layoutY="15.0" promptText="First Name" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
+                              <TextField fx:id="gFName" layoutX="26.0" layoutY="15.0" promptText="First Name" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="25.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" maxWidth="400.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
