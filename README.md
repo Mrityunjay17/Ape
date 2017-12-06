@@ -1,1 +1,1 @@
-# Administrative Portal for Education-Desktop-Application-
+# Administrative Portal for Education-Desktop-Application
